@@ -16,6 +16,11 @@ function respond() {
     this.res.writeHead(200);
     this.res.end();
   }
+    else if(request.text && botRegexPLS.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("pls");
+    this.res.end();
+  }
 }
 
 function postMessage() {
@@ -52,13 +57,6 @@ function postMessage() {
   });
   botReq.end(JSON.stringify(body));
 }
-
-else if(request.text && botRegexPLS.test(request.text)) {
-this.res.writeHead(200);
-postMessage("pls");
-this.res.end();
-}
-  
 
 }
 exports.respond = respond;
