@@ -18,7 +18,7 @@ function respond() {
   }
 }
 
-function postMessage() {
+function postMessage(.memes) {
   var botResponse, options, body, botReq;
 
   botResponse = cool();
