@@ -14,7 +14,7 @@ function respond() {
   } 
   if(request.text && botPLS.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("pls");
+    postMessage("if this works I'll cry");
     this.res.end();
   } 
 }
