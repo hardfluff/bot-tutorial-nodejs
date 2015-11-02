@@ -4,23 +4,8 @@ var cool = require('cool-ascii-faces');
 var botID = process.env.BOT_ID;
 
 function respond() {
-  var request = JSON.parse('pls');,
-      botRegex = /^\.pls$/;
-
-  if(request.text && botRegex.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage();
-    this.res.end();
-  } else {
-    console.log("don't care");
-    this.res.writeHead(200);
-    this.res.end();
-  }
-}
-
-function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\.dank$/;
+      botRegex = /^\.dank$/;  botRegexPLS = /^\.pls$/;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -68,5 +53,12 @@ function postMessage() {
   botReq.end(JSON.stringify(body));
 }
 
+else if(request.text && botRegexPLS.test(request.text)) {
+this.res.writeHead(200);
+postMessage("pls");
+this.res.end();
+}
+  
 
+}
 exports.respond = respond;
